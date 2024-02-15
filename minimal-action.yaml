@@ -16,4 +16,4 @@ spec:
       name: invoke-custom-action
       action: roadie:agent
       input:
-        message: ${{ '' | now }}
+        action: test-action
