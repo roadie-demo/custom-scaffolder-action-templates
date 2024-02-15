@@ -1,0 +1,1 @@
+# custom-scaffolder-action-templates
