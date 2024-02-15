@@ -1,0 +1,19 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: minimal-custom-scaffolder-action
+  description: Test the connectivity of custom scaffolder actions
+spec:
+  type: service
+  owner: user:guest
+  steps:
+    - id: debug-filter
+      name: debug-filter
+      action: debug:log
+      input:
+        message: ${{ '' | now }}
+    - id: invoke-custom-action
+      name: invoke-custom-action
+      action: roadie:agent
+      input:
+        message: ${{ '' | now }}
