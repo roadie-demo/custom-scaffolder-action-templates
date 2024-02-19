@@ -26,3 +26,8 @@ spec:
           first: value1
           second: value2
 
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        listWorkspace: true
