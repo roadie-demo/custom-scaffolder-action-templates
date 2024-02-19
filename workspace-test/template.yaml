@@ -21,7 +21,6 @@ spec:
       action: roadie:agent
       input:
         action: test-action
-        shareWorkspace: true
         input:
           first: value1
           second: value2
