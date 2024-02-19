@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: custom-action-with-workspace
+  name: custom-action-with-workspace2
   title: Custom Scaffolder Action with Shared Workspace
   description: Custom Scaffolder Action using a shared workspace.
 
