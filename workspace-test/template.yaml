@@ -1,0 +1,28 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: custom-action-with-workspace
+  title: Custom Scaffolder Action with Shared Workspace
+  description: Custom Scaffolder Action using a shared workspace.
+
+spec:
+  type: service
+  owner: user:guest
+  steps:
+
+    - id: fetchTemplate
+      name: Fetch file
+      action: fetch:template
+      input:
+        url: ./skeleton
+
+    - id: invoke-custom-action
+      name: invoke-custom-action
+      action: roadie:agent
+      input:
+        action: test-action
+        shareWorkspace: true
+        input:
+          first: value1
+          second: value2
+
