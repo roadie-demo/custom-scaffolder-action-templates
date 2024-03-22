@@ -31,3 +31,21 @@ spec:
       action: debug:log
       input:
         listWorkspace: true
+
+
+    - id: invoke-second-custom-action
+      name: invoke-second-custom-action
+      action: roadie:agent
+      input:
+        action: test-action2
+        shareWorkspace: true
+        input:
+          first: value1
+          second: value2
+
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        listWorkspace: true
+        
