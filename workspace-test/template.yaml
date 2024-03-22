@@ -22,7 +22,7 @@ spec:
       input:
         action: test-action
         shareWorkspace: true
-        input:
+        payload:
           first: value1
           second: value2
 
@@ -39,7 +39,7 @@ spec:
       input:
         action: test-action2
         shareWorkspace: true
-        input:
+        payload:
           first: value1
           second: value2
 
