@@ -1,0 +1,57 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: custom-action-with-large-workspace
+  title: Custom Scaffolder Action with a Large Shared Workspace
+  description: Custom Scaffolder Action using a LARGE shared workspace.
+
+spec:
+  type: service
+  owner: user:guest
+  steps:
+
+    - id: fetchTemplate
+      name: Fetch file
+      action: fetch:template
+      input:
+        url: ./skeleton
+
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        listWorkspace: true
+
+    - id: invoke-custom-action
+      name: invoke-custom-action
+      action: roadie:agent
+      input:
+        action: test-action
+        shareWorkspace: true
+        payload:
+          first: value1
+          second: value2
+
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        listWorkspace: true
+
+
+    - id: invoke-second-custom-action
+      name: invoke-second-custom-action
+      action: roadie:agent
+      input:
+        action: test-action2
+        shareWorkspace: true
+        payload:
+          first: value1
+          second: value2
+
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        listWorkspace: true
+        
